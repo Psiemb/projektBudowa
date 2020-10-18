@@ -1,10 +1,12 @@
 package uPawla.Kolekcje;
 
+//TODO: niepotrzebne importy - usunąć ctrl + alt + o
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Faktura {
+public class Faktura {//TODO: między nazwą klasy a polami jeden wiersz odstępu
     private String firma;
+    //TODO: nie trzeba pisać w polu 'akcpeptacjaFaktury' albo 'wartoscFaktury'. Jesteścmy w klasie 'Faktura' więc wystarczy samo 'wartość' i 'zaakceptowana'
     private boolean akceptacjaFaktury;
     private double wartoscFaktury;
 
@@ -37,4 +39,6 @@ public class Faktura {
     public void setWartoscFaktury(double wartoscFaktury) {
         this.wartoscFaktury = wartoscFaktury;
     }
+
+    //TODO: toString
 }

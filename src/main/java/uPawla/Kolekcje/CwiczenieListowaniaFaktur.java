@@ -21,8 +21,11 @@ public class CwiczenieListowaniaFaktur {
         faktury.add(new Faktura("FirmaC", true, 10.0));
 
 
+        //TODO: nazwa 'fakturaSumaFirmaA' nie jest dobrą nazwą. Ponieważ ten stream nie filtruje po nazwie firmy
         Double fakturaSumaFirmaA = faktury.stream()
                 .filter(f -> !f.isAkceptacjaFaktury())
+                //TODO: IntelliJ świeci Ci 'f.getWartoscFaktury()' na zółto -> znaczy, że można lepiej to zapisać. UStaw kursor na zółtym polu i kliknij
+                //TODO: alt + enter i zrób to co sugeruje IntellJ.
                 .map(f -> f.getWartoscFaktury())
                 .reduce(0.0, Double::sum);
         //.max(Double::compareTo);
@@ -30,6 +33,9 @@ public class CwiczenieListowaniaFaktur {
         System.out.println(fakturaSumaFirmaA);
 
         Optional<Double> fakturaMaxFirmaB = faktury.stream()
+                //TODO: porównując Stringi lepiej używać metody 'equalsIgnoreCase' jeśli kod nie jest czuły na małe i wielkie litery.
+//                .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
+                //TODO: obrona przed null'ami
                 .filter(f -> f.getFirma().equals("FirmaB"))
                 .map(Faktura :: getWartoscFaktury)
                 //.max(Double::compareTo);
@@ -39,6 +45,7 @@ public class CwiczenieListowaniaFaktur {
 
         Optional<Double> fakturaMinFirmaC = faktury.stream()
                 .filter(f -> f.getFirma().equals("FirmaC"))
+                //TODO; tu to samo jeśli chodzi o podpowiedź IntelliJ.
                 .map(f -> f.getWartoscFaktury())
                 .min(Double::compareTo);
 
