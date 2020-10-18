@@ -6,6 +6,7 @@ public class Czlowiek {
     private int wiek;
     private boolean daltonista;
     private double height;
+private double a;
 
     public Czlowiek(String imie, int wiek, boolean daltonista) {
         this.imie = imie;
