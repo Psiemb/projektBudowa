@@ -16,7 +16,7 @@ public class Main {
         Accountant accountant = new Accountant();
         //   double aktulneKosztyKwartalne;
 
-        System.out.println(constructionSite);
+//        System.out.println(constructionSite);
 
         //////////////////
         int currentChoice = 0;
