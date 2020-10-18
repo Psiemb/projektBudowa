@@ -5,11 +5,18 @@ public class Czlowiek {
     private String imie;
     private int wiek;
     private boolean daltonista;
+    private double height;
 
     public Czlowiek(String imie, int wiek, boolean daltonista) {
         this.imie = imie;
         this.wiek = wiek;
         this.daltonista = daltonista;
+    }
+    public Czlowiek(String imie, int wiek, boolean daltonista, double height) {
+        this.imie = imie;
+        this.wiek = wiek;
+        this.daltonista = daltonista;
+        this.height = height;
     }
 
     public String getImie() {
@@ -36,12 +43,21 @@ public class Czlowiek {
         this.daltonista = daltonista;
     }
 
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
     @Override
     public String toString() {
         return "Czlowiek{" +
                 "imie='" + imie + '\'' +
                 ", wiek=" + wiek +
                 ", daltonista=" + daltonista +
+                ", height=" + height +
                 '}';
     }
 }
