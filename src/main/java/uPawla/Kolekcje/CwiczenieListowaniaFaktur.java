@@ -2,6 +2,7 @@ package uPawla.Kolekcje;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -47,6 +48,7 @@ public class CwiczenieListowaniaFaktur {
 
         Optional<Double> fakturaMinFirmaC = faktury.stream()
                 .filter(f -> f.getFirma().equals("FirmaC"))
+                .filter(obj -> true)  //.filter(Objects::nonNull)
                 //TODO; tu to samo jeśli chodzi o podpowiedź IntelliJ.
                 .map(Faktura::getWartosc)
                 .min(Double::compareTo);
