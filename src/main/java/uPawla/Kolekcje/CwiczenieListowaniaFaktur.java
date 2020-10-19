@@ -23,12 +23,12 @@ public class CwiczenieListowaniaFaktur {
 
         //TODO: nazwa 'fakturaSumaFirmaA' nie jest dobrą nazwą. Ponieważ ten stream nie filtruje po nazwie firmy
         Double fakturaSumaFirmaA = faktury.stream()
-                .filter(f -> !f.isAkceptacjaFaktury())
+                .filter(f -> !f.isZaakceptowana())
                 //TODO: IntelliJ świeci Ci 'f.getWartoscFaktury()' na zółto -> znaczy, że można lepiej to zapisać. UStaw kursor na zółtym polu i kliknij
                 //TODO: alt + enter i zrób to co sugeruje IntellJ.
-                .map(f -> f.getWartoscFaktury())
+                .map(Faktura::getWartosc)  //.map(f -> f.getWartosc())  -zostawiam ten opis w celach szkoleniowych abym mógł wrócić
                 .reduce(0.0, Double::sum);
-        //.max(Double::compareTo);
+
 
         System.out.println(fakturaSumaFirmaA);
 
@@ -37,16 +37,16 @@ public class CwiczenieListowaniaFaktur {
 //                .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
                 //TODO: obrona przed null'ami
                 .filter(f -> f.getFirma().equals("FirmaB"))
-                .map(Faktura :: getWartoscFaktury)
-                //.max(Double::compareTo);
-                .max((o1, o2) -> o1.compareTo(o2));
+                .map(Faktura ::getWartosc)
+                .max(Double::compareTo);  //.max((o1, o2) -> o1.compareTo(o2));  - zostawiam ten opis w celach szkoleniowych
+
 
         System.out.println(fakturaMaxFirmaB);
 
         Optional<Double> fakturaMinFirmaC = faktury.stream()
                 .filter(f -> f.getFirma().equals("FirmaC"))
                 //TODO; tu to samo jeśli chodzi o podpowiedź IntelliJ.
-                .map(f -> f.getWartoscFaktury())
+                .map(Faktura::getWartosc)
                 .min(Double::compareTo);
 
         System.out.println(fakturaMinFirmaC);
