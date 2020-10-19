@@ -3,6 +3,7 @@ package uPawla.Kolekcje;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class CwiczenieListowaniaFaktur {
     public static void main(String[] args) {
@@ -32,16 +33,17 @@ public class CwiczenieListowaniaFaktur {
 
         System.out.println(fakturaSumaFirmaA);
 
-        Optional<Double> fakturaMaxFirmaB = faktury.stream()
+       // Optional<Double> fakturaMaxFirmaB = faktury.stream()
                 //TODO: porównując Stringi lepiej używać metody 'equalsIgnoreCase' jeśli kod nie jest czuły na małe i wielkie litery.
 //                .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
                 //TODO: obrona przed null'ami
-                .filter(f -> f.getFirma().equals("FirmaB"))
-                .map(Faktura ::getWartosc)
-                .max(Double::compareTo);  //.max((o1, o2) -> o1.compareTo(o2));  - zostawiam ten opis w celach szkoleniowych
-
+        Optional<Double> fakturaMaxFirmaB = faktury.stream().flatMap(Stream::ofNullable)
+                .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
+                .map(Faktura::getWartosc)
+                .max(Double::compareTo);//.max((o1, o2) -> o1.compareTo(o2));  - zostawiam ten opis w celach szkoleniowych
 
         System.out.println(fakturaMaxFirmaB);
+
 
         Optional<Double> fakturaMinFirmaC = faktury.stream()
                 .filter(f -> f.getFirma().equals("FirmaC"))
