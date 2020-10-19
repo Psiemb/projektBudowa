@@ -35,10 +35,10 @@ public class CwiczenieListowaniaFaktur {
 
         System.out.println(fakturyZaakceptowaneSuma);
 
-       // Optional<Double> fakturaMaxFirmaB = faktury.stream()
-                //TODO: porównując Stringi lepiej używać metody 'equalsIgnoreCase' jeśli kod nie jest czuły na małe i wielkie litery.
+        // Optional<Double> fakturaMaxFirmaB = faktury.stream()
+        //TODO: porównując Stringi lepiej używać metody 'equalsIgnoreCase' jeśli kod nie jest czuły na małe i wielkie litery.
 //                .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
-                //TODO: obrona przed null'ami
+        //TODO: obrona przed null'ami
         Optional<Double> fakturaMaxFirmaB = faktury.stream()
                 .filter(faktura -> Objects.nonNull(faktura.getFirma()))
                 .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
@@ -57,7 +57,41 @@ public class CwiczenieListowaniaFaktur {
                 .min(Double::compareTo);
 
         System.out.println(fakturaMinFirmaC);
+        System.out.println("");
+        System.out.println("-----------------------------------");
+        System.out.println("");
 
+        List<Podwykonawca> wydatki = new ArrayList<>();
+        wydatki.add(new Podwykonawca("FirmaW1", 43234));
+        wydatki.add(new Podwykonawca("FirmaW2", 82675));
+        wydatki.add(new Podwykonawca("FirmaW3", 1111));
+        wydatki.add(new Podwykonawca("FirmaW4", 867466));
+        wydatki.add(new Podwykonawca("FirmaW5", 998989));
+
+        List<Zleceniodawca> zarobki = new ArrayList<>();
+        zarobki.add(new Zleceniodawca("FirmaZ1", 503040));
+        zarobki.add(new Zleceniodawca("FirmaZ2", 604556));
+        zarobki.add(new Zleceniodawca("FirmaZ3", 800000));
+        zarobki.add(new Zleceniodawca("FirmaZ4", 100000));
+
+        Double sumaKosztow = wydatki.stream()
+                .filter(p -> Objects.nonNull(p.getWartosc()))
+                .map(Podwykonawca::getWartosc)
+                .reduce(0.0, Double::sum);
+
+        Double sumaZarobku = zarobki.stream()
+                .filter(z -> Objects.nonNull(z.getWartosc()))
+                .map(Zleceniodawca::getWartosc)
+                .reduce(0.0, Double::sum);
+
+
+        if (sumaZarobku > sumaKosztow) {
+            System.out.println("Firma zarobiła: " + (sumaZarobku - sumaKosztow) + " zł");
+        }
+        else {
+            System.out.println("Firma ponisoła stratę w wysokości: " + (sumaKosztow - sumaZarobku) + " zł");
+
+        }
 
     }
 }
