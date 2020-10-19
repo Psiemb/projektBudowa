@@ -23,9 +23,9 @@ public class CwiczenieListowaniaFaktur {
         faktury.add(new Faktura("FirmaC", true, 10.0));
 
 
-        //TODO: nazwa 'fakturaSumaFirmaA' nie jest dobrą nazwą. Ponieważ ten stream nie filtruje po nazwie firmy
+        //TODO: nazwa 'fakturyZaakceptowaneSuma' nie jest dobrą nazwą. Ponieważ ten stream nie filtruje po nazwie firmy
         //TODO: w dalszym ciągu ta nazwa nie jest dobra :)
-        Double fakturaSumaFirmaA = faktury.stream()
+        Double fakturyZaakceptowaneSuma = faktury.stream()
                 .filter(f -> !f.isZaakceptowana())
                 //TODO: IntelliJ świeci Ci 'f.getWartoscFaktury()' na zółto -> znaczy, że można lepiej to zapisać. UStaw kursor na zółtym polu i kliknij
                 //TODO: alt + enter i zrób to co sugeruje IntellJ.
@@ -33,7 +33,7 @@ public class CwiczenieListowaniaFaktur {
                 .reduce(0.0, Double::sum);
 
 
-        System.out.println(fakturaSumaFirmaA);
+        System.out.println(fakturyZaakceptowaneSuma);
 
        // Optional<Double> fakturaMaxFirmaB = faktury.stream()
                 //TODO: porównując Stringi lepiej używać metody 'equalsIgnoreCase' jeśli kod nie jest czuły na małe i wielkie litery.
