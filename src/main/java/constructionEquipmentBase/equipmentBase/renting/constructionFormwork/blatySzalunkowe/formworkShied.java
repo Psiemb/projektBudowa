@@ -1,7 +1,9 @@
 package constructionEquipmentBase.equipmentBase.renting.constructionFormwork.blatySzalunkowe;
 
-public class formworkShied {
+//TODO: nazwa klasy z duzej litery
+public class formworkShied { // pusta linia miedzy nazwa klasy a polami
     private String shutteringPlywood;
+    //TODO: sizeA i sizeB niewiele mówią. Długość i szerokość ?
     private int sizeA;
     private int sizeB;
 
@@ -34,4 +36,6 @@ public class formworkShied {
     public void setSizeB(int sizeB) {
         this.sizeB = sizeB;
     }
+
+    //TODO; toString
 }

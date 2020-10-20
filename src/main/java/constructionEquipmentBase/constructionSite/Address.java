@@ -3,13 +3,17 @@ package constructionEquipmentBase.constructionSite;
 public class Address {
 
     private String postCode;
+    //TODO: townName -> city + gettery i settery
     private String townName;
+    //TODO: streetName -> street + gettery i settery
     private String streetName;
+    //TODO: buildingPlotNumber ?
     private String buildingPlot;
 
     public Address() {
     }
 
+    //TODO: usunąć nieużywany konstruktor
     public Address(String postCode, String townName, String streetName, String buildingPlot) {
         this.postCode = postCode;
         this.townName = townName;
@@ -48,4 +52,6 @@ public class Address {
     public void setBuildingPlot(String buildingPlot) {
         this.buildingPlot = buildingPlot;
     }
+
+    //TODO: toString
 }

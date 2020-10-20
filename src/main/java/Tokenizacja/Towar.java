@@ -10,6 +10,8 @@ import java.util.GregorianCalendar;
 
 public class Towar {
 
+    //TODO: pierw pola, potem konstruktory, potem gettery i settery potem Twoje metody, potem @Override'owane metody (np toSTring)
+
     public Towar(){
 
         this.cena = 0.0;

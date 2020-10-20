@@ -2,6 +2,8 @@ package constructionEquipmentBase.constructionSite;
 
 public class SiteManager {
 
+    //TODO: lepiej nie przypisywać na sztywno wartości 'Andrzej' i 'Moryc'
+    //TODO: zmień na zrobienie dobrze - czyli konstruktorem albo setterami
     private String firstName = "Andrzej";
     private String lastName = "Moryc";
     private String position;
@@ -9,9 +11,12 @@ public class SiteManager {
     public SiteManager() {
     }
 
+    //TODO: usunąć zakomentowany kod
 //    public KierownictwoBudowy(String nazwisko) {
 //        this.nazwisko = nazwisko;
 //    }
+
+    //TODO: usunąć nieużywany konstruktor
     public SiteManager(String firstName, String lastName, String position) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,5 +47,6 @@ public class SiteManager {
         this.position = position;
     }
 
+    //TODO: toString
 
 }

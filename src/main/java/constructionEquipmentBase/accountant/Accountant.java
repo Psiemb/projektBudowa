@@ -8,7 +8,8 @@ import java.util.Objects;
 
 public class Accountant {
 
-    //TODO: refactor
+    //TODO: refaktor zapisu metody - na wzór metody calculateQuarterlyCosts22222
+    //TODO: w sumie ta metoda moglaby zwracac double i jako wynik kwartalne koszty
     public void calculateQuarterlyCosts(ConstructionSite constructionSite) {
         double currentQuarterlyCost;
         if (!(constructionSite.getPersonalFinances() == null) && constructionSite.getPersonalFinances().getCurrentEmployeeSalary() > 0 && constructionSite.getPersonalFinances().getCurrentPersonalStatus() > 0) {

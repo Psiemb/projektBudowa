@@ -1,6 +1,7 @@
 package constructionEquipmentBase.equipmentBase.renting.constructionFormwork.ankry;
 
-public class threadedRod {
+//TODO: nazwa klasy z duzej liter
+public class threadedRod { // TODO: miedzy nazwa klasy a polami jedna linijka pusta
     private int length;
     private String material;
 
@@ -24,4 +25,6 @@ public class threadedRod {
     public void setMaterial(String material) {
         this.material = material;
     }
+
+    //TODO: toString
 }
