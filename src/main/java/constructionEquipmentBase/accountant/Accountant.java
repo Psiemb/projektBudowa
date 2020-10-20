@@ -8,19 +8,24 @@ import java.util.Objects;
 
 public class Accountant {
 
-    //TODO: refaktor zapisu metody - na wzór metody calculateQuarterlyCosts22222
-    //TODO: w sumie ta metoda moglaby zwracac double i jako wynik kwartalne koszty
-    public void calculateQuarterlyCosts(ConstructionSite constructionSite) {
-        double currentQuarterlyCost;
-        if (!(constructionSite.getPersonalFinances() == null) && constructionSite.getPersonalFinances().getCurrentEmployeeSalary() > 0 && constructionSite.getPersonalFinances().getCurrentPersonalStatus() > 0) {
+
+    public double calculateQuarterlyCosts(ConstructionSite constructionSite) {
+        if (Objects.isNull(constructionSite) || constructionSite.getPersonalFinances().getCurrentEmployeeSalary() < 0 || constructionSite.getPersonalFinances().getCurrentPersonalStatus() < 0) {
+            System.out.println(" Nie zatrudniono pracownika lub obecna średnia stawka budowlańca nie może być liczba ujemną ");
+
+        }
+
+            double currentQuarterlyCost;
+
             currentQuarterlyCost = constructionSite.getPersonalFinances().getCurrentPersonalStatus() *
                     constructionSite.getPersonalFinances().getCurrentEmployeeSalary() * 3;
             System.out.println("Obecny stan osobowy wg księgowej: " + constructionSite.getPersonalFinances().getCurrentPersonalStatus() + " osób");
             System.out.println("Aktualna stawka wynagrodzenia wg księgowej: " + constructionSite.getPersonalFinances().getCurrentEmployeeSalary() + " zł");
             System.out.println("Kwartalne koszty wynosza: " + currentQuarterlyCost + " zł.");
-        } else {
-            System.out.println(" Nie zatrudniono pracownika lub obecna średnia stawka budowlańca nie może być liczba ujemną ");
-        }
+
+
+        return currentQuarterlyCost;
+
 
     }
 
