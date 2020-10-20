@@ -2,6 +2,7 @@ package uPawla.Kolekcje;
 
 import java.util.ArrayList;
 import java.util.List;
+//TODO: ctrl + alt + o
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -35,7 +36,7 @@ public class CwiczenieListowaniaFaktur {
         System.out.println(fakturaMaxFirmaB);
 
 
-        Double fakturaMinFirmaC = teresa.faturaMinimalnaFirmaC(faktury);
+        Double fakturaMinFirmaC = teresa.faturaMinimalnaFirmaC(faktury).get();
 
         System.out.println(fakturaMinFirmaC);
 
