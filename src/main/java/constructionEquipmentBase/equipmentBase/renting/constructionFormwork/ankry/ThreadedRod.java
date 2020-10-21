@@ -1,14 +1,10 @@
 package constructionEquipmentBase.equipmentBase.renting.constructionFormwork.ankry;
 
-//TODO: nazwa klasy z duzej liter
-public class threadedRod { // TODO: miedzy nazwa klasy a polami jedna linijka pusta
+
+public class ThreadedRod {
+
     private int length;
     private String material;
-
-    public threadedRod(int length, String material) {
-        this.length = length;
-        this.material = material;
-    }
 
     public int getLength() {
         return length;
@@ -26,5 +22,12 @@ public class threadedRod { // TODO: miedzy nazwa klasy a polami jedna linijka pu
         this.material = material;
     }
 
-    //TODO: toString
+    @Override
+    public String toString() {
+        return "ThreadedRod{" +
+                "length=" + length +
+                ", material='" + material + '\'' +
+                '}';
+    }
+
 }

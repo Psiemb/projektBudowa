@@ -2,19 +2,15 @@ package constructionEquipmentBase.accountant;
 
 import constructionEquipmentBase.constructionSite.ConstructionSite;
 import constructionEquipmentBase.constructionSite.PersonalFinances;
-
 import java.util.Objects;
 
-
 public class Accountant {
-
 
     public double calculateQuarterlyCosts(ConstructionSite constructionSite) {
         if (Objects.isNull(constructionSite) || constructionSite.getPersonalFinances().getCurrentEmployeeSalary() < 0 || constructionSite.getPersonalFinances().getCurrentPersonalStatus() < 0) {
             System.out.println(" Nie zatrudniono pracownika lub obecna średnia stawka budowlańca nie może być liczba ujemną ");
-
-        }
-
+            return 0.0;
+        } else {
             double currentQuarterlyCost;
 
             currentQuarterlyCost = constructionSite.getPersonalFinances().getCurrentPersonalStatus() *
@@ -23,9 +19,8 @@ public class Accountant {
             System.out.println("Aktualna stawka wynagrodzenia wg księgowej: " + constructionSite.getPersonalFinances().getCurrentEmployeeSalary() + " zł");
             System.out.println("Kwartalne koszty wynosza: " + currentQuarterlyCost + " zł.");
 
-
-        return currentQuarterlyCost;
-
+            return currentQuarterlyCost;
+        }
 
     }
 

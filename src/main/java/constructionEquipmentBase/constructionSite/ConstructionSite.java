@@ -11,15 +11,16 @@ public class ConstructionSite {
     public ConstructionSite() {
     }
 
-    public ConstructionSite(String name, String postCode, String townName,
-                            String nazwaUlicy, String nrDzialek, String nazwiskoKierownika) {
-        this.siteManager.setLastName(nazwiskoKierownika);
-        this.address.setPostCode(postCode);
-        this.address.setTownName(townName);
-        this.address.setStreetName(nazwaUlicy);
-        this.address.setBuildingPlot(nrDzialek);
-
+    public ConstructionSite(String name, String postCode, String city,
+                            String ulica, String nrDzialek, String imieKierownika, String nazwiskoKierownika) {
         this.name = name;
+        this.address.setPostCode(postCode);
+        this.address.setCity(city);
+        this.address.setStreet(ulica);
+        this.address.setBuildingPlotNumber(nrDzialek);
+        this.siteManager.setLastName(nazwiskoKierownika);
+        this.siteManager.setFirstName(imieKierownika);
+
     }
 
     public String getName() {

@@ -1,5 +1,4 @@
 package constructionEquipmentBase.equipmentBase.renting;
 
-//TODO: nazwa klasy z dużej litery
-public class renting {
+public class Renting {
 }
