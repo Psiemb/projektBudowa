@@ -37,7 +37,7 @@ public class Main {
             currentChoice = scanner.nextInt();
 
             if (currentChoice == 2) {
-                constructionSite = new ConstructionSite("Wola Justowska", "31-366", "Krakow", "Wiosenna", "221", "Molik");
+                constructionSite = new ConstructionSite("Wola Justowska", "31-366", "Krakow", "Wiosenna", "221","Janusz", "Molik");
 //                System.out.println("Podaj nazwę budowy");
 //                String nazwaBudowy = scanner.next();
 //                System.out.println("Podaj kod pocztowy miejscowości.");

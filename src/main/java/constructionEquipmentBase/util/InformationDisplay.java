@@ -13,9 +13,9 @@ public class InformationDisplay {
         System.out.println();
         System.out.println("Informacje adresowe:");
         System.out.println("Kod pocztowy: " + constructionSite.getAddress().getPostCode());
-        System.out.println("Nazwa miejcowości: "  + constructionSite.getAddress().getTownName());
-        System.out.println("Nr działek: " + constructionSite.getAddress().getBuildingPlot());
-        System.out.println("Nazwa ulicy: " + constructionSite.getAddress().getStreetName());
+        System.out.println("Nazwa miejcowości: "  + constructionSite.getAddress().getCity());
+        System.out.println("Nr działek: " + constructionSite.getAddress().getBuildingPlotNumber());
+        System.out.println("Nazwa ulicy: " + constructionSite.getAddress().getStreet());
         System.out.println("Aktualny stan osobowy: " + constructionSite.getPersonalFinances().getCurrentPersonalStatus());
 
 
