@@ -7,9 +7,9 @@ public class ToyShop {
 
     private List<Toy> toys;
 
-    private ToyShop() {
-        this.toys = new ArrayList<>();
-    }
+//    private ToyShop() {
+//        this.toys = new ArrayList<>();
+//    }
 
     public List<Toy> getToys() {
         return toys;
@@ -23,11 +23,12 @@ public class ToyShop {
     }
 
     private static List<Toy> createToys() {
-        ArrayList<Toy> toys = new ArrayList<>();
+        List<Toy> toys = new ArrayList<>();
         toys.add(createToy(ToyType.TRANSFORMER, "Optimus Prime", 219.8));
         toys.add(createToy(ToyType.TRANSFORMER, "Jazz", 99));
         toys.add(createToy(ToyType.TRANSFORMER, "Ratcher", 143.99));
         toys.add(createToy(ToyType.TRANSFORMER, "Ironhide", 15));
+        toys.add(createToy(ToyType.TRANSFORMER, "Ironhideee", 15));
         toys.add(createToy(ToyType.CUDDLY, "Blin", 15));
         toys.add(createToy(ToyType.CUDDLY, "Sunnie", 56));
         toys.add(createToy(ToyType.CUDDLY, "KitKot", 111));
