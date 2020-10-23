@@ -9,112 +9,87 @@ import java.util.Optional;
 
 public class Worker {
 
-    public Long iloscZabawek(List<Toy> zabawki) {
-        long iloscZabawek = zabawki.size();
-        System.out.println(iloscZabawek);
-        return iloscZabawek;
+    public Long quantityOfToys(List<Toy> toys) {
+        long quantityOfToys = toys.size();
+        System.out.println(quantityOfToys);
+        return quantityOfToys;
     }
 
-    public Long countTransformer(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Long countTransformer(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> Objects.nonNull(toy.getType()))
                 .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
                 .count();
     }
 
-    public Long countAll(List<Toy> zabawki) {
-        long countCuddly = zabawki.stream()
+    public Long countAll(List<Toy> toys) {
+        long countCuddly = toys.stream()
                 .filter(toy -> Objects.nonNull(toy.getType()))
                 .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
                 .count();
-        long countTransformers = zabawki.stream()
+        long countTransformers = toys.stream()
                 .filter(toy -> Objects.nonNull(toy.getType()))
                 .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
                 .count();
         return countCuddly + countTransformers;
     }
 
-    public Double wartoscWszystkichZabawek(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Double valueAllToys(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> toy.getPrice() > 0)
                 .map(Toy::getPrice)
                 .reduce(0.0, Double::sum);
     }
 
-    public Double wartoscTransformersow(List<Toy> zabawki) {
-        return zabawki.stream()
-                .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
-                .map(Toy::getPrice)
-                .reduce(0.0, Double::sum);
-    }
-
-
-    public Double wartoscZabawekCuddly(List<Toy> zabawki) {
-        return zabawki.stream()
-                .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
-                .map(Toy::getPrice)
-                .reduce(0.0, Double::sum);
-    }
-
-    //TODO: Prawie dobrze! Dodałeś parametr ToyType toyType do metody - super. Ale dlaczego go nie użyłeś w jej ciele? (jego kolor to szary)
-    public Double wartoscZabawek(List<Toy> zabawki, ToyType toyType) {
-        return zabawki.stream()
-                //  .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
-                .map(Toy::getPrice)
-                .reduce(0.0, Double::sum);
-    }
-
-    public Double wartoscZabawek222(List<Toy> zabawki, ToyType typZabawkiPodanyPrzezUzytkownika) {
+    public Double valueAllToysAsChoiced(List<Toy> toys, ToyType toyTypeGivenByTheUser) {
         //W pierwszym kroku bronię się, gdy ktoś poda 'null' jako drugi parametr.
-        if (Objects.isNull(typZabawkiPodanyPrzezUzytkownika)) {
+        if (Objects.isNull(toyTypeGivenByTheUser)) {
             return 0.0;
         }
-
-        //tutaj wiem, że drugi parametr metody (typZabawkiPodanyPrzezUzytkownika) nie jest nullem więc mogę go użyć w metodzie .filter(toy -> ...)
-        return zabawki.stream()
-                .filter(toy -> typZabawkiPodanyPrzezUzytkownika.equals(toy.getType()))
+        //tutaj wiem, że drugi parametr metody (toyTypeGivenByTheUser) nie jest nullem więc mogę go użyć w metodzie .filter(toy -> ...)
+        return toys.stream()
+                .filter(toy -> toyTypeGivenByTheUser.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .reduce(0.0, Double::sum);
     }
 
-
-    public Optional<Double> maxCena(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Optional<Double> maxPrice(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> toy.getPrice() > 0)
                 .map(Toy::getPrice)
                 .max(Double::compareTo);
     }
 
-    public Optional<Double> maxCenaTransformersa(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Optional<Double> maxPriceTransformers(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .max(Double::compareTo);
     }
 
-    public Optional<Double> maxCenaPrzytulanka(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Optional<Double> maxPriceCuddly(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .max(Double::compareTo);
     }
 
-    public Optional<Double> minCena(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Optional<Double> minPrice(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> toy.getPrice() > 0)
                 .map(Toy::getPrice)
                 .min(Double::compareTo);
     }
 
-    public Optional<Double> minCenaTransformersa(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Optional<Double> minPriceTransformers(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .min(Double::compareTo);
     }
 
-    public Optional<Double> minCenaPrzytulanka(List<Toy> zabawki) {
-        return zabawki.stream()
+    public Optional<Double> minPriceCuddly(List<Toy> toys) {
+        return toys.stream()
                 .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .min(Double::compareTo);
