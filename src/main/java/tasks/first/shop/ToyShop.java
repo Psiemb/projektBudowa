@@ -17,6 +17,10 @@ public class ToyShop {
         return toys;
     }
 
+    public Toy getZabawka() {
+        return zabawka;
+    }
+
     public static ToyShop createToyShop() {    // w tej metodzie do tworzonego sklepu przypisujemy utworzone zabawki - prawda??
         ToyShop toyShop = new ToyShop();       //utworzenie sklepu
         toyShop.toys = createToys();           //przypisanie kolejnych zabwek do sklepu
