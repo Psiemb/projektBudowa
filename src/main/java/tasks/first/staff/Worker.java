@@ -56,14 +56,26 @@ public class Worker {
                 .reduce(0.0, Double::sum);
     }
 
+    //TODO: Prawie dobrze! Dodałeś parametr ToyType toyType do metody - super. Ale dlaczego go nie użyłeś w jej ciele? (jego kolor to szary)
     public Double wartoscZabawek(List<Toy> zabawki, ToyType toyType) {
         return zabawki.stream()
-              //  .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
+                //  .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .reduce(0.0, Double::sum);
     }
 
+    public Double wartoscZabawek222(List<Toy> zabawki, ToyType typZabawkiPodanyPrzezUzytkownika) {
+        //W pierwszym kroku bronię się, gdy ktoś poda 'null' jako drugi parametr.
+        if (Objects.isNull(typZabawkiPodanyPrzezUzytkownika)) {
+            return 0.0;
+        }
 
+        //tutaj wiem, że drugi parametr metody (typZabawkiPodanyPrzezUzytkownika) nie jest nullem więc mogę go użyć w metodzie .filter(toy -> ...)
+        return zabawki.stream()
+                .filter(toy -> typZabawkiPodanyPrzezUzytkownika.equals(toy.getType()))
+                .map(Toy::getPrice)
+                .reduce(0.0, Double::sum);
+    }
 
 
     public Optional<Double> maxCena(List<Toy> zabawki) {

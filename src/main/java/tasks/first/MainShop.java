@@ -27,8 +27,10 @@ public class MainShop {
         System.out.println("Suma cen wszystkich zabawek wynosi: " + worker.wartoscWszystkichZabawek(zabawki));
 
         System.out.println("Suma cen Transformersów wynosi: " + worker.wartoscTransformersow(zabawki));
+        System.out.println("Suma cen Transformersów wynosi  -rev2 :" + worker.wartoscZabawek222(zabawki, ToyType.TRANSFORMER) + "\n");
 
-        System.out.println("Suma cen Zabawek Cuddle wynosi: " + worker.wartoscZabawekCuddly(zabawki) + "\n");
+        System.out.println("Suma cen Zabawek Cuddle wynosi: " + worker.wartoscZabawekCuddly(zabawki));
+        System.out.println("Suma cen Zabawek Cuddle wynosi  -rev2 :" + worker.wartoscZabawek222(zabawki, ToyType.CUDDLY) + "\n");
 
 
         System.out.println("Suma cen wszystkich zabawek wynosi -rev2 :" + worker.wartoscZabawek(zabawki, ToyType.CUDDLY) + "\n");
