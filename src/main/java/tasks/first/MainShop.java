@@ -2,6 +2,7 @@ package tasks.first;
 
 import tasks.first.shop.Toy;
 import tasks.first.shop.ToyShop;
+import tasks.first.shop.ToyType;
 import tasks.first.staff.Worker;
 
 import java.util.List;
@@ -28,6 +29,11 @@ public class MainShop {
         System.out.println("Suma cen Transformersów wynosi: " + worker.wartoscTransformersow(zabawki));
 
         System.out.println("Suma cen Zabawek Cuddle wynosi: " + worker.wartoscZabawekCuddly(zabawki) + "\n");
+
+
+        System.out.println("Suma cen wszystkich zabawek wynosi -rev2 :" + worker.wartoscZabawek(zabawki, ToyType.CUDDLY) + "\n");
+
+
 
         System.out.println("Najdroższa zabawka: " + worker.maxCena(zabawki));
 
