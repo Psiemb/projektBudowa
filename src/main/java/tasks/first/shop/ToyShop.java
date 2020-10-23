@@ -7,19 +7,19 @@ public class ToyShop {
 
     private List<Toy> toys;
 
-//    private ToyShop() {
-//        this.toys = new ArrayList<>();
-//    }
+    private ToyShop() {
+        this.toys = new ArrayList<>();   // mówimy że zmienna toys przejmuje referncje z listy Array kolejnych obiektów
+    }
 
-    public List<Toy> getToys() {
+    public List<Toy> getToys() {     //metodoa zwraca w zmiennej toys liste kolejnych zabawek
         return toys;
     }
 
-    public static ToyShop createToyShop() {
-        ToyShop toyShop = new ToyShop();
-        toyShop.toys = createToys();
+    public static ToyShop createToyShop() {    // w tej metodzie do tworzonego sklepu przypisujemy utworzone zabawki - prawda??
+        ToyShop toyShop = new ToyShop();       //utworzenie sklepu
+        toyShop.toys = createToys();           //przypisanie kolejnych zabwek do sklepu
 
-        return toyShop;
+        return toyShop;            //zwraca sklep wraz zabawkami
     }
 
     private static List<Toy> createToys() {
