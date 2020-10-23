@@ -6,9 +6,11 @@ import java.util.List;
 public class ToyShop {
 
     private List<Toy> toys;
+    private Toy zabawka;
 
     private ToyShop() {
         this.toys = new ArrayList<>();   // mówimy że zmienna toys przejmuje referncje z listy Array kolejnych obiektów
+        this.zabawka = new Toy(ToyType.TRANSFORMER, "Optimus Prime", 219.8);
     }
 
     public List<Toy> getToys() {     //metodoa zwraca w zmiennej toys liste kolejnych zabawek
