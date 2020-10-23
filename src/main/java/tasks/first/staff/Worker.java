@@ -31,8 +31,7 @@ public class Worker {
                 .filter(toy -> Objects.nonNull(toy.getType()))
                 .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
                 .count();
-        long countAll = countCuddly + countTransformers;
-        return countAll;
+        return countCuddly + countTransformers;
     }
 
     public Double wartoscWszystkichZabawek(List<Toy> zabawki) {
@@ -49,12 +48,23 @@ public class Worker {
                 .reduce(0.0, Double::sum);
     }
 
+
     public Double wartoscZabawekCuddly(List<Toy> zabawki) {
         return zabawki.stream()
                 .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .reduce(0.0, Double::sum);
     }
+
+    public Double wartoscZabawek(List<Toy> zabawki, ToyType toyType) {
+        return zabawki.stream()
+              //  .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
+                .map(Toy::getPrice)
+                .reduce(0.0, Double::sum);
+    }
+
+
+
 
     public Optional<Double> maxCena(List<Toy> zabawki) {
         return zabawki.stream()
