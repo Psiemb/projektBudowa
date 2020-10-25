@@ -7,15 +7,32 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Worker {
 
     public Toy getMoreExpensiveToy(List<Toy> toysToSold, ToyType toyType) {
         return toysToSold.stream()
                 .filter(toy -> toyType.equals(toy.getType()))
-        //        .max((o1, o2) -> ((int) o1.getPrice()) - (int) o2.getPrice())
+                //        .max((o1, o2) -> ((int) o1.getPrice()) - (int) o2.getPrice())
                 .max(Comparator.comparingInt(o -> ((int) o.getPrice())))
                 .orElse(null);
+    }
+
+    public Toy getMoreExpensiveToy222(List<Toy> toysToSold, ToyType toyType) {
+        Double maxymalnaCena = toysToSold.stream()
+                .filter(toy -> toyType.equals(toy.getType()))
+                .map(Toy::getPrice)
+                .max((Double::compareTo))
+                .orElse(null);
+
+        Toy najdrozszaZabawka = toysToSold.stream()
+                .filter(toy -> toyType.equals(toy.getType()))
+                .filter(toy -> toy.getPrice() == maxymalnaCena)
+                .findFirst()
+                .orElse(null);
+
+        return najdrozszaZabawka;
     }
 
     public Long quantityOfToys(List<Toy> toys) {
