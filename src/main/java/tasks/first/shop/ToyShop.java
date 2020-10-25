@@ -48,7 +48,7 @@ public class ToyShop {
         return new Toy(type, name, price);
     }
 
-    public void soldToy(Toy mostExpensiveToy) {
+    public void soldToy(Toy soldToys) {
 
         // tutaj umieszczasz kod, który usuwana podaną zabawkę z listy 'toysToSold' a dodaje do listy 'soldToys'
 
