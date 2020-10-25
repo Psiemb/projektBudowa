@@ -13,37 +13,38 @@ public class MainShop {
 
         ToyShop toyShop = ToyShop.createToyShop();
 
-        List<Toy> toys = toyShop.getToys();
+        List<Toy> toysToSold = toyShop.getToysToSold();
+        List<Toy> soldToys = toyShop.getSoldToys();
 
         Worker worker = new Worker();
 
+        //TODO; Twoim zadaniem jest implementacja metody 'getMoreExpensiveToy' z klasy 'Worker'
+        Toy mostExpensiveToy = worker.getMoreExpensiveToy(toysToSold, ToyType.TRANSFORMER);
+        //TODO: usuwanie znalezionej zabawki z listy 'zabawki do sprzedania'
+        toysToSold.remove(mostExpensiveToy);
+        //TODO: dodanie znalezionej zabawki do listy 'sprzedane zabawki'
+        soldToys.add(mostExpensiveToy);
 
-        System.out.println("Wszytkich zabawek w sklepie jest: " + worker.quantityOfToys(toys));
-
-        System.out.println("Wszytskich Transformersów jest: " + worker.countTransformer(toys));
-
-        System.out.println("Wszystkich przytulanek jest: " + worker.countAll(toys) + "\n");
-
-        System.out.println("Suma cen wszystkich zabawek wynosi: " + worker.valueAllToys(toys));
-
-        System.out.println("Suma cen Transformersów wynosi: " + worker.valueAllToysAsChoiced(toys, ToyType.TRANSFORMER));
-
-        System.out.println("Suma cen Zabawek Cuddle wynosi :" + worker.valueAllToysAsChoiced(toys, ToyType.CUDDLY) + "\n");
-     
+        System.out.println("Toys to sold: " + toysToSold);
+        System.out.println("Sold toys : " + soldToys);
 
 
-        System.out.println("Najdroższa zabawka: " + worker.maxPrice(toys));
 
-        System.out.println("Najdroższy Trabsformers: " + worker.maxPriceTransformers(toys));
 
-        System.out.println("Najdroższa Przytulanka: " + worker.maxPriceCuddly(toys) + "\n");
 
-        System.out.println("Najtańsza zabawka: " + worker.minPrice(toys));
-
-        System.out.println("Najtańsza Trabsformers: " + worker.minPriceTransformers(toys));
-
-        System.out.println("Najtańsza Przytulanka: " + worker.minPriceCuddly(toys));
-
+//        System.out.println("Wszytkich zabawek w sklepie jest: " + worker.quantityOfToys(toysToSold));
+//        System.out.println("Wszytskich Transformersów jest: " + worker.countTransformer(toysToSold));
+//        System.out.println("Wszystkich przytulanek jest: " + worker.countAll(toysToSold) + "\n");
+//        System.out.println("Suma cen wszystkich zabawek wynosi: " + worker.valueAllToys(toysToSold));
+//        System.out.println("Suma cen Transformersów wynosi: " + worker.valueAllToysAsChoiced(toysToSold, ToyType.TRANSFORMER));
+//        System.out.println("Suma cen Zabawek Cuddle wynosi :" + worker.valueAllToysAsChoiced(toysToSold, ToyType.CUDDLY) + "\n");
+//        System.out.println("Najdroższa zabawka: " + worker.maxPrice(toysToSold));
+//        System.out.println("Najdroższy Trabsformers: " + worker.maxPriceTransformers(toysToSold));
+//        System.out.println("Najdroższa Przytulanka: " + worker.maxPriceCuddly(toysToSold) + "\n");
+//        System.out.println("Najtańsza zabawka: " + worker.minPrice(toysToSold));
+//        System.out.println("Najtańsza Trabsformers: " + worker.minPriceTransformers(toysToSold));
+//        System.out.println("Najtańsza Przytulanka: " + worker.minPriceCuddly(toysToSold));
+//
     }
 
 }

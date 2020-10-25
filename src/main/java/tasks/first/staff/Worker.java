@@ -3,11 +3,18 @@ package tasks.first.staff;
 import tasks.first.shop.Toy;
 import tasks.first.shop.ToyType;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
 public class Worker {
+
+    //TODO: na samym dole masz zakomentowaną metodę, która działą poprawnie.
+    public Toy getMoreExpensiveToy(List<Toy> toysToSold, ToyType toyType) {
+        //TODO: ta metoda ma wyciągnąć z listy 'toysToSold' zabawki o podanym typie 'toyType' i największej cenie.
+        return null;
+    }
 
     public Long quantityOfToys(List<Toy> toys) {
         long quantityOfToys = toys.size();
@@ -94,4 +101,16 @@ public class Worker {
                 .map(Toy::getPrice)
                 .min(Double::compareTo);
     }
+
+
+//    public Toy getMoreExpensiveToy(List<Toy> toys, ToyType toyType) {
+//        Toy mostExpensiveToy = toys.stream()
+//                .filter(toy -> toyType.equals(toy.getType()))
+////                .max((o1, o2) -> ((int) o1.getPrice()) - (int) o2.getPrice())
+//                .max(Comparator.comparingInt(o -> ((int) o.getPrice())))
+//// 'orElse(null)' mówi tyle, że gdy nie ma najdroższej zabawki to wtedy zwróć nulla
+//                .orElse(null);
+//
+//        return mostExpensiveToy;
+//    }
 }

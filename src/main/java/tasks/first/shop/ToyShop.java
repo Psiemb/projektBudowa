@@ -5,25 +5,24 @@ import java.util.List;
 
 public class ToyShop {
 
-    private List<Toy> toys;
-    private Toy zabawka;
+    private List<Toy> toysToSold;
+    private List<Toy> soldToys;
 
     private ToyShop() {
-        this.toys = new ArrayList<>();   // mówimy że zmienna toys przejmuje referncje z listy Array kolejnych obiektów
-        this.zabawka = new Toy(ToyType.TRANSFORMER, "Optimus Prime", 219.8);
     }
 
-    public List<Toy> getToys() {     //metodoa zwraca w zmiennej toys liste kolejnych zabawek
-        return toys;
+    public List<Toy> getToysToSold() {     //metodoa zwraca w zmiennej toys liste kolejnych zabawek
+        return toysToSold;
     }
 
-    public Toy getZabawka() {
-        return zabawka;
+    public List<Toy> getSoldToys() {
+        return soldToys;
     }
 
     public static ToyShop createToyShop() {    // w tej metodzie do tworzonego sklepu przypisujemy utworzone zabawki - prawda??
         ToyShop toyShop = new ToyShop();       //utworzenie sklepu
-        toyShop.toys = createToys();           //przypisanie kolejnych zabwek do sklepu
+        toyShop.toysToSold = createToys();           //przypisanie kolejnych zabwek do sklepu
+        toyShop.soldToys = new ArrayList<>();
 
         return toyShop;            //zwraca sklep wraz zabawkami
     }
