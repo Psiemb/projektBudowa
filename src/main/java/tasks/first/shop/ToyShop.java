@@ -24,6 +24,7 @@ public class ToyShop {
         toyShop.toysToSold = createToys();           //przypisanie kolejnych zabwek do sklepu
         toyShop.soldToys = new ArrayList<>();
 
+
         return toyShop;            //zwraca sklep wraz zabawkami
     }
 

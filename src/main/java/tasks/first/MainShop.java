@@ -18,11 +18,10 @@ public class MainShop {
 
         Worker worker = new Worker();
 
-        //TODO; Twoim zadaniem jest implementacja metody 'getMoreExpensiveToy' z klasy 'Worker'
         Toy mostExpensiveToy = worker.getMoreExpensiveToy(toysToSold, ToyType.TRANSFORMER);
-        //TODO: usuwanie znalezionej zabawki z listy 'zabawki do sprzedania'
+
         toysToSold.remove(mostExpensiveToy);
-        //TODO: dodanie znalezionej zabawki do listy 'sprzedane zabawki'
+
         soldToys.add(mostExpensiveToy);
 
         System.out.println("Toys to sold: " + toysToSold);
