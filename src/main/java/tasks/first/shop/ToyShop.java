@@ -7,6 +7,7 @@ public class ToyShop {
 
     private List<Toy> toysToSold;
     private List<Toy> soldToys;
+    private List<Toy> utarg;
 
     private ToyShop() {
     }
@@ -19,10 +20,16 @@ public class ToyShop {
         return soldToys;
     }
 
+    public List<Toy> getUtarg() {
+        return utarg;
+    }
+
+
     public static ToyShop createToyShop() {    // w tej metodzie do tworzonego sklepu przypisujemy utworzone zabawki - prawda??
         ToyShop toyShop = new ToyShop();       //utworzenie sklepu
         toyShop.toysToSold = createToys();           //przypisanie kolejnych zabwek do sklepu
         toyShop.soldToys = new ArrayList<>();
+        toyShop.utarg = new ArrayList<>();
 
 
         return toyShop;            //zwraca sklep wraz zabawkami
@@ -48,7 +55,21 @@ public class ToyShop {
         return new Toy(type, name, price);
     }
 
-    public void soldToy(Toy soldToys) {
+    public void soldToy(Toy soldToy) {
+        if (toysToSold.contains(null))
+            System.out.println("Element na liście toyToSold ma wartość null.");
+            //return;
+        else{
+            toysToSold.remove(soldToy);
+            soldToys.add(soldToy);
+        }
+        if (soldToy ==  null)
+            System.out.println("Błędna wartość. ");
+            return;
+
+
+
+
 
         // tutaj umieszczasz kod, który usuwana podaną zabawkę z listy 'toysToSold' a dodaje do listy 'soldToys'
 
