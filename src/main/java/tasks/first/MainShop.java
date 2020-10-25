@@ -20,9 +20,10 @@ public class MainShop {
 
         Toy mostExpensiveToy = worker.getMoreExpensiveToy(toysToSold, ToyType.TRANSFORMER);
 
-        toysToSold.remove(mostExpensiveToy);
-
-        soldToys.add(mostExpensiveToy);
+        toyShop.soldToy(mostExpensiveToy);
+//        toysToSold.remove(mostExpensiveToy);
+//
+//        soldToys.add(mostExpensiveToy);
 
         System.out.println("Toys to sold: " + toysToSold);
         System.out.println("Sold toys : " + soldToys);

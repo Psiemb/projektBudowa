@@ -47,4 +47,10 @@ public class ToyShop {
     private static Toy createToy(ToyType type, String name, double price) {
         return new Toy(type, name, price);
     }
+
+    public void soldToy(Toy mostExpensiveToy) {
+
+        // tutaj umieszczasz kod, który usuwana podaną zabawkę z listy 'toysToSold' a dodaje do listy 'soldToys'
+
+    }
 }
