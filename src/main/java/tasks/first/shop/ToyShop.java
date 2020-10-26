@@ -55,15 +55,15 @@ public class ToyShop {
         return new Toy(type, name, price);
     }
 
-    public void soldToy(Toy soldToy) {
+    public void soldToy(Toy zabawka) {
         if (toysToSold.contains(null))
             System.out.println("Element na liście toyToSold ma wartość null.");
             //return;
         else{
-            toysToSold.remove(soldToy);
-            soldToys.add(soldToy);
+            toysToSold.remove(zabawka);
+            soldToys.add(zabawka);
         }
-        if (soldToy ==  null)
+        if (zabawka ==  null)
             System.out.println("Błędna wartość. ");
             return;
 
