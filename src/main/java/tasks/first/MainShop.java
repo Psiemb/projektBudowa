@@ -27,6 +27,7 @@ public class MainShop {
 
         System.out.println("Toys to sold: " + toysToSold);
         System.out.println("Sold toys : " + soldToys);
+        System.out.println("Utarg wynosi: " + toyShop.getUtarg() + " zł.");
 
 
 

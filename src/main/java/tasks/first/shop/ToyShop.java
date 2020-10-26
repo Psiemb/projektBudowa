@@ -2,6 +2,7 @@ package tasks.first.shop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ToyShop {
 
@@ -54,19 +55,21 @@ public class ToyShop {
 
     public void soldToy(Toy zabawka) {
         //TODO: Objects.nonNull(zabawka)
-        if (zabawka == null) {
+        if (Objects.isNull(zabawka)) {
             System.out.println("Błędna wartość. ");
             return;
         }
         //TODO: ten if raczej jest niepotrzebny
-        if (toysToSold.contains(null))
-            System.out.println("Element na liście toyToSold ma wartość null.");
+//        if (toysToSold.contains(null))
+//            System.out.println("Element na liście toyToSold ma wartość null.");
 
         //TODO: gdy zakup został sfinalizowany to dodaj cenę zabawki do aktualnego 'utargu' <- nowe pole
         if (toysToSold.contains(zabawka)) {
             System.out.println("Dokonujemy zakupu. ");
             toysToSold.remove(zabawka);
             soldToys.add(zabawka);
+            utarg = utarg + zabawka.getPrice();
+
         } else {
             System.out.println("Brak takiej zabawki. ");
             return;
