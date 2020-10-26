@@ -7,7 +7,7 @@ public class ToyShop {
 
     private List<Toy> toysToSold;
     private List<Toy> soldToys;
-    private List<Toy> utarg;
+    private double utarg;
 
     private ToyShop() {
     }
@@ -20,17 +20,14 @@ public class ToyShop {
         return soldToys;
     }
 
-    public List<Toy> getUtarg() {
+    public double getUtarg() {
         return utarg;
     }
-
 
     public static ToyShop createToyShop() {    // w tej metodzie do tworzonego sklepu przypisujemy utworzone zabawki - prawda??
         ToyShop toyShop = new ToyShop();       //utworzenie sklepu
         toyShop.toysToSold = createToys();           //przypisanie kolejnych zabwek do sklepu
         toyShop.soldToys = new ArrayList<>();
-        toyShop.utarg = new ArrayList<>();
-
 
         return toyShop;            //zwraca sklep wraz zabawkami
     }
@@ -56,13 +53,16 @@ public class ToyShop {
     }
 
     public void soldToy(Toy zabawka) {
+        //TODO: Objects.nonNull(zabawka)
         if (zabawka == null) {
             System.out.println("Błędna wartość. ");
             return;
         }
+        //TODO: ten if raczej jest niepotrzebny
         if (toysToSold.contains(null))
             System.out.println("Element na liście toyToSold ma wartość null.");
 
+        //TODO: gdy zakup został sfinalizowany to dodaj cenę zabawki do aktualnego 'utargu' <- nowe pole
         if (toysToSold.contains(zabawka)) {
             System.out.println("Dokonujemy zakupu. ");
             toysToSold.remove(zabawka);
