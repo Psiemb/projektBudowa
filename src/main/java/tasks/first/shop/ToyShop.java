@@ -56,22 +56,20 @@ public class ToyShop {
     }
 
     public void soldToy(Toy zabawka) {
-        if (toysToSold.contains(null))
-            System.out.println("Element na liście toyToSold ma wartość null.");
-            //return;
-        else{
-            toysToSold.remove(zabawka);
-            soldToys.add(zabawka);
-        }
-        if (zabawka ==  null)
+        if (zabawka == null) {
             System.out.println("Błędna wartość. ");
             return;
+        }
+        if (toysToSold.contains(null))
+            System.out.println("Element na liście toyToSold ma wartość null.");
 
-
-
-
-
-        // tutaj umieszczasz kod, który usuwana podaną zabawkę z listy 'toysToSold' a dodaje do listy 'soldToys'
-
+        if (toysToSold.contains(zabawka)) {
+            System.out.println("Dokonujemy zakupu. ");
+            toysToSold.remove(zabawka);
+            soldToys.add(zabawka);
+        } else {
+            System.out.println("Brak takiej zabawki. ");
+            return;
+        }
     }
 }
