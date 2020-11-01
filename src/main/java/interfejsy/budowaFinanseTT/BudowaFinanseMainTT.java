@@ -1,14 +1,13 @@
 package interfejsy.budowaFinanseTT;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BudowaFinanseMainTT {
     public static void main(String[] args) {
 
-        SiteManagerTT siteManagerTT= SiteManagerTT.analizujFaktury();
+        SiteManagerTT siteManagerTT = SiteManagerTT.utworzSiteManageraTT();
 
-        List<DokumentFinansowyTT> dokumentFinansowyTT = new ArrayList<>();
+        List<DokumentFinansowyTT> dokumentFinansowyTT = siteManagerTT.getDokumentyFinansowe();
 
 //        List<DokumentFinansowyTT> karaTT = siteManagerTT.getKaraTT();
 //        List<DokumentFinansowyTT> fakturaSprzedazowaTT = siteManagerTT.getFakturySprzedazoweTT();
@@ -17,7 +16,9 @@ public class BudowaFinanseMainTT {
         KsiegowaTT ksiegowaTT = new KsiegowaTT();
 
         double wynikobliczeniaTT = ksiegowaTT.obliczTT(dokumentFinansowyTT); //ToDO aby można włożyć dokument finansowy a nie  karaTT, fakturaSorzedażwoaTT lub fakturaZakupowaTT
-//
+
+        System.out.println("Obliczone zyski wynosza: " + wynikobliczeniaTT);
+
 //        List<DokumentFinansowyTT> dokumentFinansowyTT = new ArrayList<>();
 
 //        KaraTT karaTT = new KaraTT(TypDokumentuTT.KARATT, 212, "Policja");

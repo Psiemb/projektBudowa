@@ -10,33 +10,37 @@ import java.util.List;
 
 public class SiteManagerTT {
 
-    private List<DokumentFinansowyTT> fakturyZakupoweTT;
-    private List<DokumentFinansowyTT> fakturySprzedazoweTT;
-    private List<DokumentFinansowyTT> karaTT;
+//    private List<DokumentFinansowyTT> fakturyZakupoweTT;
+//    private List<DokumentFinansowyTT> fakturySprzedazoweTT;
+//    private List<DokumentFinansowyTT> karaTT;
+
+    private List<DokumentFinansowyTT> dokumentyFinansowe;
 
     public SiteManagerTT() {
     }
 
-    public List<DokumentFinansowyTT> getFakturyZakupoweTT() {
-        return fakturyZakupoweTT;
+    public List<DokumentFinansowyTT> getDokumentyFinansowe() {
+        return dokumentyFinansowe;
     }
+//    public List<DokumentFinansowyTT> getFakturyZakupoweTT() {
+//        return fakturyZakupoweTT;
+//    }
+//
+//    public List<DokumentFinansowyTT> getFakturySprzedazoweTT() {
+//        return fakturySprzedazoweTT;
+//    }
+//
+//    public List<DokumentFinansowyTT> getKaraTT() {
+//        return karaTT;
+//    }
 
-    public List<DokumentFinansowyTT> getFakturySprzedazoweTT() {
-        return fakturySprzedazoweTT;
-    }
-
-    public List<DokumentFinansowyTT> getKaraTT() {
-        return karaTT;
-    }
-
-    public static SiteManagerTT analizujFaktury(){
+    public static SiteManagerTT utworzSiteManageraTT(){
         SiteManagerTT siteManagerTT =new SiteManagerTT();
-        siteManagerTT.czytajDokumentyTT();
-//        siteManagerTT. fakturyZakupoweTT = siteManagerTT.czytajDokumentyTT();
+        siteManagerTT. dokumentyFinansowe = siteManagerTT.pobierzDokumenty();
 
         return siteManagerTT;
     }
-    private static List<DokumentFinansowyTT> czytajDokumentyTT(){
+    private static List<DokumentFinansowyTT> pobierzDokumenty(){
         List<DokumentFinansowyTT> dokumentFinansowyTTS =new ArrayList<>();
 
         dokumentFinansowyTTS.add(new KaraTT(TypDokumentuTT.KARATT, 34,"Policja"));
