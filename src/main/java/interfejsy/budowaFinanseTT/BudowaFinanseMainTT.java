@@ -7,7 +7,7 @@ public class BudowaFinanseMainTT {
 
         SiteManagerTT siteManagerTT = SiteManagerTT.utworzSiteManageraTT();
 
-        List<DokumentFinansowyTT> dokumentFinansowyTT = siteManagerTT.getDokumentyFinansowe();
+        List<DokumentFinansowyTT> dokumenciki = siteManagerTT.getDokumentyFinansowe();
 
 //        List<DokumentFinansowyTT> karaTT = siteManagerTT.getKaraTT();
 //        List<DokumentFinansowyTT> fakturaSprzedazowaTT = siteManagerTT.getFakturySprzedazoweTT();
@@ -15,7 +15,7 @@ public class BudowaFinanseMainTT {
 
         KsiegowaTT ksiegowaTT = new KsiegowaTT();
 
-        double wynikobliczeniaTT = ksiegowaTT.obliczTT(dokumentFinansowyTT); //ToDO aby można włożyć dokument finansowy a nie  karaTT, fakturaSorzedażwoaTT lub fakturaZakupowaTT
+        double wynikobliczeniaTT = ksiegowaTT.obliczTT(dokumenciki); //ToDO aby można włożyć dokument finansowy a nie  karaTT, fakturaSorzedażwoaTT lub fakturaZakupowaTT
 
         System.out.println("Obliczone zyski wynosza: " + wynikobliczeniaTT);
 
