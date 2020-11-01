@@ -28,9 +28,10 @@ public class SiteManagerTT {
     public List<DokumentFinansowyTT> getKaraTT() {
         return karaTT;
     }
+
     public static SiteManagerTT analizujFaktury(){
         SiteManagerTT siteManagerTT =new SiteManagerTT();
-        siteManagerTT.fakturySprzedazoweTT = czytajDokumentyTT();
+        siteManagerTT.czytajDokumentyTT();
 
         return siteManagerTT;
     }

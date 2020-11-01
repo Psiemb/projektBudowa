@@ -1,5 +1,6 @@
 package interfejsy.budowaFinanseTT;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BudowaFinanseMainTT {
@@ -7,13 +8,15 @@ public class BudowaFinanseMainTT {
 
         SiteManagerTT siteManagerTT= SiteManagerTT.analizujFaktury();
 
-        List<DokumentFinansowyTT> karaTT = siteManagerTT.getKaraTT();
-        List<DokumentFinansowyTT> fakturaSprzedazowaTT = siteManagerTT.getFakturySprzedazoweTT();
-        List<DokumentFinansowyTT> fakturaZakupowaTT = siteManagerTT.getFakturyZakupoweTT();
+        List<DokumentFinansowyTT> dokumentFinansowyTT = new ArrayList<>();
+
+//        List<DokumentFinansowyTT> karaTT = siteManagerTT.getKaraTT();
+//        List<DokumentFinansowyTT> fakturaSprzedazowaTT = siteManagerTT.getFakturySprzedazoweTT();
+//        List<DokumentFinansowyTT> fakturaZakupowaTT = siteManagerTT.getFakturyZakupoweTT();
 
         KsiegowaTT ksiegowaTT = new KsiegowaTT();
 
-        double wynikobliczeniaTT = ksiegowaTT.obliczTT(karaTT); //ToDO aby można włożyć dokument finansowy a nie  karaTT, fakturaSorzedażwoaTT lub fakturaZakupowaTT
+        double wynikobliczeniaTT = ksiegowaTT.obliczTT(dokumentFinansowyTT); //ToDO aby można włożyć dokument finansowy a nie  karaTT, fakturaSorzedażwoaTT lub fakturaZakupowaTT
 //
 //        List<DokumentFinansowyTT> dokumentFinansowyTT = new ArrayList<>();
 
