@@ -35,6 +35,7 @@ public class SiteManagerTT {
 //    }
 
     public static SiteManagerTT utworzSiteManageraTT(){
+
         SiteManagerTT siteManagerTT =new SiteManagerTT();
         siteManagerTT. dokumentyFinansowe = siteManagerTT.pobierzDokumenty();
 
