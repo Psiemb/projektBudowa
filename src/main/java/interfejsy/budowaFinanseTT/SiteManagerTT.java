@@ -32,6 +32,7 @@ public class SiteManagerTT {
     public static SiteManagerTT analizujFaktury(){
         SiteManagerTT siteManagerTT =new SiteManagerTT();
         siteManagerTT.czytajDokumentyTT();
+//        siteManagerTT. fakturyZakupoweTT = siteManagerTT.czytajDokumentyTT();
 
         return siteManagerTT;
     }
