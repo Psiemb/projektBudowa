@@ -1,6 +1,7 @@
 package jaknauczycsieprogramowania.drive;
 
 import jaknauczycsieprogramowania.file.File;
+import jaknauczycsieprogramowania.file.imagefile.JPGImageFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class HDDDrive implements Drive {
                 .filter(file -> file.getName().equals(name))
                 .findFirst();
 
-        return foundFile.orElseThrow();
+        return foundFile.orElse(new JPGImageFile("test", 55, 55));
     }
 
 }
