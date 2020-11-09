@@ -13,4 +13,5 @@ public class GIFImageFile extends AbstractImageFile {
     public int getVersion() {
         return 2;
     }
+
 }

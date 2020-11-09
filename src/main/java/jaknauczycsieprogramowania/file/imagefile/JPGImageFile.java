@@ -16,4 +16,5 @@ public class JPGImageFile extends AbstractImageFile {
     public void displayImage() {
         System.out.println("Displaying JPG");
     }
+
 }

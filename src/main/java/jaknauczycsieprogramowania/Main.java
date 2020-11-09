@@ -12,11 +12,11 @@ public class Main {
       //  System.out.println(Monitor.getMaxHeight());
 
 //        Monitor monitor = new Monitor();
-        Drive ssdDrive = new SSDDrive();
+        Drive drive = new HDDDrive();
         //Computer computer = new Computer(monitor, ssdDrive);
-        ssdDrive.addFile(new MP3MusicFile("dsf",324,"re","ert",43));
+        drive.addFile(new MP3MusicFile("dsf",324,"re","ert",43));
        // ssdDrive.listFiles();
-        File file = ssdDrive.findFile("dsf");
+        File file = drive.findFile("dsf");
         System.out.println(file.getSize());
 
     }

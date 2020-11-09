@@ -18,4 +18,5 @@ public abstract class AbstractMusicFile extends AbstractFile implements MusicFil
     public FileType getType() {
         return FileType.MUSIC;
     }
+
 }

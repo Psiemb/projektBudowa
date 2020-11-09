@@ -12,5 +12,6 @@ public abstract class AbstractImageFile extends AbstractFile {
     @Override
     public FileType getType() {
         return FileType.IMAGE;
+
     }
 }

@@ -18,4 +18,5 @@ public abstract class AbstractFile implements File {
     public int getSize() {
         return this.size;
     }
+
 }
