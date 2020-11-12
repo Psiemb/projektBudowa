@@ -5,6 +5,9 @@ import tasks.third.FiguryPlaskie;
 public class Kwadrat extends FiguryPlaskie {
     private double wymiarKwadratu;
 
+    public Kwadrat() {
+    }
+
     public Kwadrat(double wymiarA) {
         this.wymiarKwadratu = wymiarA;
     }

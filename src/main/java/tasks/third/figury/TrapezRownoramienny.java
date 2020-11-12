@@ -11,6 +11,15 @@ public class TrapezRownoramienny extends FiguryPlaskie {
         return wymiarA;
     }
 
+    public TrapezRownoramienny() {
+    }
+
+    public TrapezRownoramienny(double wymiarA, double wymiarB, double wysokoscH) {
+        this.wymiarA = wymiarA;
+        this.wymiarB = wymiarB;
+        this.wysokoscH = wysokoscH;
+    }
+
     public void setWymiarA(double wymiarA) {
         this.wymiarA = wymiarA;
     }
@@ -31,12 +40,6 @@ public class TrapezRownoramienny extends FiguryPlaskie {
         this.wysokoscH = wysokoscH;
     }
 
-    public TrapezRownoramienny(double wymiarA, double wymiarB, double wysokoscH) {
-        this.wymiarA = wymiarA;
-        this.wymiarB = wymiarB;
-        this.wysokoscH = wysokoscH;
-    }
-
 
     @Override
     public double pole() {
@@ -47,8 +50,11 @@ public class TrapezRownoramienny extends FiguryPlaskie {
 
     @Override
     public double obwod() {
-        double obwod = (wymiarA + wymiarB) +0.5*(wymiarA-wymiarB)*wysokoscH;
-        System.out.println("Obwód trapezu równoramiennego wynosi: " + obwod);
+        double obwod;
+        if (wymiarA > 0 & wymiarB >0 & wysokoscH > 0) {
+            obwod= wymiarA+wymiarB+2*Math.sqrt(wymiarA*wymiarA/4 - wymiarA*wymiarB/2+wymiarB*wymiarB/4+wysokoscH*wysokoscH);
+        System.out.println("Obwód trapezu równoramiennego wynosi: " + obwod);}
+        else {obwod = 0; System.out.println("Wymiar musi byc większy od zera");}
         return obwod;
     }
 

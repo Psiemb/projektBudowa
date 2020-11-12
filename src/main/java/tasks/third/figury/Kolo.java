@@ -5,6 +5,9 @@ import tasks.third.FiguryPlaskie;
 public class Kolo extends FiguryPlaskie {
     private double promien;
 
+    public Kolo() {
+    }
+
     public Kolo(double promien) {
         this.promien = promien;
     }
