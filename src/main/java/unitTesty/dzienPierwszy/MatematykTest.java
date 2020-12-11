@@ -26,4 +26,6 @@ public class MatematykTest {
         assertEquals(1, result);
     }
 
+
+
 }
