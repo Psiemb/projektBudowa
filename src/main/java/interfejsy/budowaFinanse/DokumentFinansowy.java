@@ -4,6 +4,6 @@ import interfejsy.budowaFinanse.dokument.TypDokumentu;
 
 public interface DokumentFinansowy {
 
-    TypDokumentu getTyp();
+    public abstract TypDokumentu getTyp();
     double getWartosc();
 }

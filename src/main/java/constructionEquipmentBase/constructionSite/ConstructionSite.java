@@ -2,15 +2,22 @@ package constructionEquipmentBase.constructionSite;
 
 public class ConstructionSite {
 
-    private String name;
-    private CostDocuments costDocuments = new CostDocuments();
-    private SiteManager siteManager = new SiteManager();
-    private Address address = new Address();
-    private PersonalFinances personalFinances = new PersonalFinances();
+    private String name = "P";
+    private CostDocuments costDocuments;// = new CostDocuments();
+    private SiteManager siteManager;// = new SiteManager();
+    private Address address;// = new Address();
+    private PersonalFinances personalFinances;// = new PersonalFinances();
 
     public ConstructionSite() {
+        CostDocuments costDocuments = new CostDocuments();
+        SiteManager siteManager = new SiteManager();
+        Address address = new Address();
+        PersonalFinances personalFinances = new PersonalFinances();
+
+
     }
 
+    //To jest zle zrobione
     public ConstructionSite(String name, String postCode, String city,
                             String ulica, String nrDzialek, String imieKierownika, String nazwiskoKierownika) {
         this.name = name;

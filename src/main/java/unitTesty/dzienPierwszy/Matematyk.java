@@ -9,6 +9,6 @@ public class Matematyk {
         else if (a < 0) {
             return -a;
         }
-        return 100;
+        return 0;
     }
 }

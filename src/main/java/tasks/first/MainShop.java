@@ -12,22 +12,28 @@ public class MainShop {
     public static void main(String[] args) {
 
         ToyShop toyShop = ToyShop.createToyShop();
-
+        System.out.println(toyShop);
         List<Toy> toysToSold = toyShop.getToysToSold();
         List<Toy> soldToys = toyShop.getSoldToys();
 
         Worker worker = new Worker();
 
         Toy mostExpensiveToy = worker.getMoreExpensiveToy(toysToSold, ToyType.TRANSFORMER);
+        System.out.println("Najdroższa zabawka:" + mostExpensiveToy);
 
         toyShop.soldToy(mostExpensiveToy);
 //        toysToSold.remove(mostExpensiveToy);
 //
 //        soldToys.add(mostExpensiveToy);
 
-        System.out.println("Toys to sold: " + toysToSold);
         System.out.println("Sold toys : " + soldToys);
+        System.out.println("Toys to sold: " + toysToSold);
         System.out.println("Utarg wynosi: " + toyShop.getUtarg() + " zł.");
+        System.out.println();
+
+        System.out.println("Ilość zabawek do sprzedazy wynosi: " + worker.countAll(toysToSold));
+
+        System.out.println("Ilość zabawek sprzedanych wynosi: " + worker.countAll(soldToys));
 
 
 

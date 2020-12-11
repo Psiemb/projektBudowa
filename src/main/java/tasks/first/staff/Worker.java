@@ -7,12 +7,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public class Worker {
 
     public Toy getMoreExpensiveToy(List<Toy> toysToSold, ToyType toyType) {
         return toysToSold.stream()
+                .filter(toy -> Objects.nonNull(toy.getType()))
                 .filter(toy -> toyType.equals(toy.getType()))
                 //        .max((o1, o2) -> ((int) o1.getPrice()) - (int) o2.getPrice())
                 .max(Comparator.comparingInt(o -> ((int) o.getPrice())))
@@ -20,13 +20,15 @@ public class Worker {
     }
 
     public Toy getMoreExpensiveToy222(List<Toy> toysToSold, ToyType toyType) {
-        Double maxymalnaCena = toysToSold.stream()
+        Double maxymalnaCena = toysToSold.stream()      // Znajduje najwyzszą cenę
                 .filter(toy -> toyType.equals(toy.getType()))
                 .map(Toy::getPrice)
                 .max((Double::compareTo))
                 .orElse(null);
 
-        Toy najdrozszaZabawka = toysToSold.stream()
+        System.out.println("Najwyższa cena w  wybranym typie zabawki wynosi:" + maxymalnaCena);
+
+        Toy najdrozszaZabawka = toysToSold.stream()  //Zwraca zabawkę o najwyższej cenie
                 .filter(toy -> toyType.equals(toy.getType()))
                 .filter(toy -> toy.getPrice() == maxymalnaCena)
                 .findFirst()
@@ -51,10 +53,12 @@ public class Worker {
     public Long countAll(List<Toy> toys) {
         long countCuddly = toys.stream()
                 .filter(toy -> Objects.nonNull(toy.getType()))
+                .filter(toy -> toy.getPrice() != 0)
                 .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
                 .count();
         long countTransformers = toys.stream()
                 .filter(toy -> Objects.nonNull(toy.getType()))
+                .filter(toy -> toy.getPrice() != 0)
                 .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
                 .count();
         return countCuddly + countTransformers;
@@ -120,6 +124,30 @@ public class Worker {
                 .map(Toy::getPrice)
                 .min(Double::compareTo);
     }
+
+    public Double avergePriceCuddlyAndTransformer(List<Toy> toys) {
+        Double sumOfTransformers = toys.stream()
+                .filter(toy -> Objects.nonNull(toy.getType()))
+                .filter(toy -> ToyType.TRANSFORMER.equals(toy.getType()))
+                .map(Toy::getPrice)
+                .reduce(0.0, Double::sum);
+
+
+        Double sumOfCuddly = toys.stream()
+                .filter(toy -> Objects.nonNull(toy.getType()))
+                .filter(toy -> ToyType.CUDDLY.equals(toy.getType()))
+                .map(Toy::getPrice)
+                .reduce(0.0, Double::sum);
+        double avergePrice = (sumOfTransformers + sumOfCuddly) / 2;
+        return avergePrice;
+//
+    }
+
+//    Double maxymalnaCena = toysToSold.stream()      // Znajduje najwyzszą cenę
+//            .filter(toy -> toyType.equals(toy.getType()))
+//            .map(Toy::getPrice)
+//            .max((Double::compareTo))
+//            .orElse(null);
 
 
 //    public Toy getMoreExpensiveToy(List<Toy> toys, ToyType toyType) {

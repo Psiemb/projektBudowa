@@ -3,8 +3,8 @@ package jaknauczycsieprogramowania.file.imagefile;
 public class JPGImageFile extends AbstractImageFile {
     private int compression;
 
-    public JPGImageFile(String name, int size, int compression) {
-        super(name, size);
+    public JPGImageFile(int size, String name, int compression) {
+        super(size, name);
 
         this.compression = compression;
     }

@@ -29,12 +29,14 @@ public class ToyShop {
         ToyShop toyShop = new ToyShop();       //utworzenie sklepu
         toyShop.toysToSold = createToys();           //przypisanie kolejnych zabwek do sklepu
         toyShop.soldToys = new ArrayList<>();
+//        toyShop.soldToys = new LinkedList<>();
 
         return toyShop;            //zwraca sklep wraz zabawkami
     }
 
     private static List<Toy> createToys() {
         List<Toy> toys = new ArrayList<>();
+        toys.add(new Toy(ToyType.CUDDLY,"AAAAAAA", 2));
         toys.add(createToy(ToyType.TRANSFORMER, "Optimus Prime", 219.8));
         toys.add(createToy(ToyType.TRANSFORMER, "Jazz", 99));
         toys.add(createToy(ToyType.TRANSFORMER, "Ratcher", 143.99));
@@ -45,10 +47,10 @@ public class ToyShop {
         toys.add(createToy(ToyType.CUDDLY, "KitKot", 111));
         toys.add(createToy(ToyType.CUDDLY, "Smiler", 93));
         toys.add(createToy(null, null, -999));
+        toys.add(createToy(ToyType.CUDDLY, null, 0));
 
         return toys;
     }
-
     private static Toy createToy(ToyType type, String name, double price) {
         return new Toy(type, name, price);
     }

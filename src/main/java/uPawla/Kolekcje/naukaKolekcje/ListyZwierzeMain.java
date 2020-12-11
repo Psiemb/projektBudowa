@@ -10,15 +10,18 @@ public class ListyZwierzeMain {
 
         List<Zwierze> listaZwierzat = new ArrayList<>();
 
-        listaZwierzat.add(new Zwierze("Tapir", 4,true,40,false ));
-        listaZwierzat.add(new Zwierze("Słoń", 4,true,4000,false ));
-        listaZwierzat.add(new Zwierze("Papuga", 2,false,0.5,true ));
+        Zwierze z = new Zwierze("Tapir", 4,true,40,false);
+
+        listaZwierzat.add(z);
+        listaZwierzat.add(createZwierze("Słoń", 4,true,4000,false ));
+        listaZwierzat.add(createZwierze("Papuga", 2,false,0.5,true ));
         listaZwierzat.add(new Zwierze("Struś", 2,false,60,false ));
         listaZwierzat.add(new Zwierze("Kangur", 4,true,40,false ));
         listaZwierzat.add(new Zwierze("Rekin", 0,true,300,false ));
 
         System.out.println("Ilosc elementow w segregatorze : " + listaZwierzat.size());
         System.out.println("Czy lista jest pusta? " + listaZwierzat.isEmpty());
+
 
 
         List<Zwierze> zwierzetaMniejNiz4Nogi = listaZwierzat.stream()
@@ -37,6 +40,8 @@ public class ListyZwierzeMain {
         zwierzetaMniejNiz4Nogi.forEach(animal -> System.out.println(animal.getNazwaZwierzecia() +" " + animal.getIloscNog() + " " +
                 animal.isCzySsak() + " " + animal.getWaga() + " " + animal.isCzyUmieLatac()));
 
-
     }
+public static Zwierze createZwierze(String nazwaZwierzecia,int iloscNog,boolean czySsak, double waga, boolean czyUmieLatac){
+        return new Zwierze(nazwaZwierzecia,iloscNog,czySsak,waga, czyUmieLatac);
+}
 }

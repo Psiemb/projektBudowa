@@ -8,6 +8,12 @@ public class Zwierze {
     private double waga;
     private boolean czyUmieLatac;
 
+    public Zwierze(String nazwaZwierzecia, int iloscNog, double waga) {
+        this.nazwaZwierzecia = nazwaZwierzecia;
+        this.iloscNog = iloscNog;
+        this.waga = waga;
+    }
+
     public Zwierze(String nazwaZwierzecia, int iloscNog, boolean czySsak, double waga, boolean czyUmieLatac) {
         this.nazwaZwierzecia = nazwaZwierzecia;
         this.iloscNog = iloscNog;
