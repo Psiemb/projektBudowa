@@ -35,7 +35,7 @@ public class MojaKsiegowa {
 
     public Double fakturaMaxymalnaFirmaB(List<Faktura> faktury) {
         return faktury.stream()
-                .filter(faktura -> Objects.nonNull(faktura.getFirma()))
+                .filter(f -> Objects.nonNull(f.getFirma()))
                 .filter(f -> f.getFirma().equalsIgnoreCase("FirmaB"))
                 .map(Faktura::getWartosc)
                 .max(Double::compareTo)

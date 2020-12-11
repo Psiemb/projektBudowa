@@ -3,8 +3,8 @@ package jaknauczycsieprogramowania.file.musicfile;
 public class MP3MusicFile extends AbstractMusicFile {
     private int quality;
 
-    public MP3MusicFile(String name, int size, String bandName, String title, int quality) {
-        super(name, size, bandName, title);
+    public MP3MusicFile(int size,String name, String bandName, String title, int quality) {
+        super(size, name, bandName, title);
 
         this.quality = quality;
     }

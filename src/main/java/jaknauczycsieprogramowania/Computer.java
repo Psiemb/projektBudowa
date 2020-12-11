@@ -10,6 +10,7 @@ public class Computer {
     private Drive drive;
     private Headphones headphones;
 
+
     private List<USBDevice> usbDevices = new ArrayList<>();
 
     public Computer(Monitor monitor, Drive drive) {

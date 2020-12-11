@@ -2,8 +2,8 @@ package jaknauczycsieprogramowania.file.imagefile;
 
 public class GIFImageFile extends AbstractImageFile {
 
-    public GIFImageFile(String name, int size) {
-        super(name, size);
+    public GIFImageFile(int size, String name) {
+        super(size, name);
     }
 
     public void showAnimation() {

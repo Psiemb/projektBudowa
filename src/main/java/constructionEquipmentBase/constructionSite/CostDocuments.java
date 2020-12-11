@@ -2,7 +2,8 @@ package constructionEquipmentBase.constructionSite;
 
 public class CostDocuments {
 
-    private Invoice invoice =new Invoice();
+//    private Invoice invoice = new Invoice();
+    private Invoice invoice;
     private PayrollList payrollList = new PayrollList();
 
     public CostDocuments() {
@@ -14,7 +15,7 @@ public class CostDocuments {
     }
 
     public Invoice getInvoice() {
-        System.out.println("Lista faktur za wybrany miesiąc: \n");
+//        System.out.println("Lista faktur za wybrany miesiąc: \n");
         return invoice;
     }
 

@@ -24,6 +24,7 @@ public class MainProduct {
         System.out.println(list.contains(new Product("Chleb")));
 
         System.out.println(list);
+
     }
     private static void removeButter(List<Product> list) {
         Product butter =new Product("Masło");

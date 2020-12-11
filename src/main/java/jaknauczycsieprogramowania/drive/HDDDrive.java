@@ -28,7 +28,7 @@ public class HDDDrive implements Drive {
                 .filter(file -> file.getName().equals(name))
                 .findFirst();
 
-        return foundFile.orElse(new JPGImageFile("test", 55, 55));
+        return foundFile.orElse(new JPGImageFile(3, "fff", 55));
     }
 
 }

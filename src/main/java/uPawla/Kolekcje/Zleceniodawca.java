@@ -25,4 +25,12 @@ public class Zleceniodawca {
     public void setWartosc(double wartosc) {
         this.wartosc = wartosc;
     }
+
+    @Override
+    public String toString() {
+        return "Zleceniodawca{" +
+                "nazwa='" + nazwa + '\'' +
+                ", wartosc=" + wartosc +
+                '}';
+    }
 }

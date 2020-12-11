@@ -2,10 +2,6 @@ package uPawla.Kolekcje;
 
 import java.util.ArrayList;
 import java.util.List;
-//TODO: ctrl + alt + o
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 public class CwiczenieListowaniaFaktur {
     public static void main(String[] args) {
@@ -28,7 +24,7 @@ public class CwiczenieListowaniaFaktur {
 
         Double fakturyZaakceptowaneSuma = teresa.fakturyZaakceptowane(faktury);
 
-        System.out.println(fakturyZaakceptowaneSuma);
+        System.out.println("Suma faktur zakaakceptowanych wynosi:" + fakturyZaakceptowaneSuma);
 
 
         Double fakturaMaxFirmaB = teresa.fakturaMaxymalnaFirmaB(faktury);

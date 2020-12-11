@@ -1,17 +1,18 @@
 package jaknauczycsieprogramowania.drive;
 
 import jaknauczycsieprogramowania.file.File;
+import jaknauczycsieprogramowania.file.imagefile.GIFImageFile;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SSDDrive implements Drive {
-    private Map<String, File> files = new HashMap<>();
+    private Map<Integer, File> files = new HashMap<>();
 
     @Override
     public void addFile(File file) {
-        files.put(file.getName(), file);
+        files.put(file.getSize(), file);
     }
 
     @Override

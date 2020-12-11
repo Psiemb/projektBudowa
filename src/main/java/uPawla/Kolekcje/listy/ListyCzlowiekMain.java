@@ -70,8 +70,17 @@ public class ListyCzlowiekMain {
                 .filter(osoba -> osoba.getImie().contains("e"))
                 .collect(Collectors.toList());
 
+        // mapowanie obiektu na inny obiekt
+
+        List<String> imiona = segregator.stream()
+                .map(osoba -> osoba.getImie())
+//                .filter(imie -> imie.)
+                .collect(Collectors.toList());
+
+
         osobaZe.forEach(osoba -> System.out.println(osoba.getImie() + " " + osoba.getWiek() + " " + osoba.isDaltonista()));
 
+        System.out.println(imiona);
     }
 
 }

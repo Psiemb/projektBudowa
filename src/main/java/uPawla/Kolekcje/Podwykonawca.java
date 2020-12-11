@@ -25,4 +25,12 @@ public class Podwykonawca {
     public void setWartosc(double wartosc) {
         this.wartosc = wartosc;
     }
+
+    @Override
+    public String toString() {
+        return "Podwykonawca{" +
+                "nazwa='" + nazwa + '\'' +
+                ", wartosc=" + wartosc +
+                '}';
+    }
 }
