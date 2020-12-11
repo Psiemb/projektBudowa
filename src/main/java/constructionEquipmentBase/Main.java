@@ -16,6 +16,11 @@ public class Main {
         Accountant accountant = new Accountant();
         //   double aktulneKosztyKwartalne;
 
+
+
+
+
+
 //        System.out.println(constructionSite);
 
         //////////////////
