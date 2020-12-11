@@ -13,8 +13,6 @@ public class OptionalBudowaMain {
 
         ConstructionSite constructionSite = new ConstructionSite();
 
-//        System.out.println(constructionSite.getCostDocuments().getInvoice());
-
         CostDocuments costDocuments = constructionSite.getCostDocuments();
 
         Invoice invFirst = costDocuments.getInvoice();
